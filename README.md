@@ -20,7 +20,7 @@ Image Classification Paper is the repository which for the research paper. This 
 
 To download the repository, simply clone this repository:
 ```
-git clone https://github.com/t-varun/Face-Recognition
+git clone https://github.com/t-varun/ImageClassification-Paper
 ```
 
 To run them, you also need the latest version of Numpy. To install it:
@@ -103,7 +103,7 @@ _________________________________________________________________
 
 ## Contributing:
 
-Contributions are welcome!  For bug reports or requests please [submit an issue](https://github.com/t-varun/Face-Recognition/issues).
+Contributions are welcome!  For bug reports or requests please [submit an issue](https://github.com/t-varun/ImageClassification-Paper/issues).
 
 ## Contact-info:
 
@@ -122,4 +122,4 @@ The content developed by VARUN is distributed under the following license:
 
 I am providing code and resources in this repository to you under an open source license.  Because this is my personal repository, the license you receive to my code and resources is from me.
 
-More about Licence at [link](https://github.com/t-varun/Face-Recognition/blob/master/LICENSE).
+More about Licence at [link](https://github.com/t-varun/ImageClassification-Paper/blob/master/LICENSE).
