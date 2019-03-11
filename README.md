@@ -71,6 +71,7 @@ For more details about TensorFlow, you can check [TensorFlow Official Website](h
 Layer (type)                 Output Shape              Param #   
 
 =================================================================
+
 flatten (Flatten)            (None, 4800)              0         
 _________________________________________________________________
 dense (Dense)                (None, 512)               2458112   
