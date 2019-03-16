@@ -1,6 +1,6 @@
 ###
 # Copyright (2019). All Rights belongs to VARUN
-# Use the code by mentioning the Sredits
+# Use the code by mentioning the Credits
 # Credit: github.com/t-varun
 # Developer:
 #
