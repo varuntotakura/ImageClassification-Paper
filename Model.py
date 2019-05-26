@@ -50,6 +50,10 @@ train_images = np.asarray(train_images)
 test_images = np.asarray(test_images)
 test_imgs = np.asarray(test_imgs)
 
+train_images = train_images.reshape((-1, 60, 80, 1))
+test_images = test_images.reshape((-1, 60, 80, 1))
+test_imgs = test_imgs.reshape((-1, 60, 80, 1))
+
 # Image Processing
 train_images = train_images / 255.0
 
@@ -58,9 +62,15 @@ test_images = test_images / 255.0
 test_imgs = test_imgs / 255.0
 
 # Sequential Model
-# Dense Layers
+# Convolutional Neural Network
 model = keras.Sequential([
-    keras.layers.Flatten(input_shape=(60, 80)),
+    keras.layers.Conv2D(32, (2, 2), activation='relu', input_shape=(60, 80, 1)),
+    keras.layers.MaxPooling2D((2, 2)),
+    keras.layers.Conv2D(64, (3, 3), activation='relu'),
+    keras.layers.MaxPooling2D((2, 2)),
+    keras.layers.Conv2D(64, (3, 3), activation='relu'),
+    keras.layers.Dropout(0.25),
+    keras.layers.Flatten(),
     keras.layers.Dense(512, activation=tf.nn.relu),
     keras.layers.Dense(128, activation=tf.nn.relu),
     keras.layers.Dense(128, activation=tf.nn.relu),
@@ -73,7 +83,7 @@ model.compile(optimizer=tf.train.AdamOptimizer(),
               metrics=['accuracy'])
 
 # Train the Model
-model.fit(train_images, train_labels, epochs=125)
+model.fit(train_images, train_labels, epochs=300)
 
 # Print the Summary
 model.summary()
@@ -91,3 +101,13 @@ predicted_label = class_names[np.argmax(predictions)]               # 11
 # Compare the predictions
 print("Predictions : ",predicted_label)                             # download
 print("Actual : ",class_names[test_labs[0]])                        # download
+
+##print(history.history.keys())
+# summarize history for accuracy
+plt.plot(history.history['acc'])
+plt.plot(history.history['loss'])
+plt.title('Model')
+plt.ylabel('Result')
+plt.xlabel('Epochs')
+plt.legend(['Accuracy', 'Loss'], loc='upper right')
+plt.show()
