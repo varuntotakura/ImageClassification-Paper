@@ -396,6 +396,6 @@ _________________________________________________________________
 C:\Users\VARUN\Anaconda3\lib\importlib\_bootstrap.py:219: RuntimeWarning: numpy.ufunc size changed, may indicate binary incompatibility. Expected 192 from C header, got 216 from PyObject
   return f(*args, **kwds)
 Test accuracy: 0.8999999761581421
-Predictions :  download
-Actual :  download
+Predictions :  VARUN
+Actual :  VARUN
 [Finished in 12.3s]

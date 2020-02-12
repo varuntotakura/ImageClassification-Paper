@@ -83,7 +83,7 @@ model.compile(optimizer=tf.train.AdamOptimizer(),
               metrics=['accuracy'])
 
 # Train the Model
-model.fit(train_images, train_labels, epochs=300)
+model.fit(train_images, train_labels, epochs=300)                   # validation_split=0.33, epochs=150, batch_size=10, verbose=0)
 
 # Print the Summary
 model.summary()
@@ -105,9 +105,17 @@ print("Actual : ",class_names[test_labs[0]])                        # download
 ##print(history.history.keys())
 # summarize history for accuracy
 plt.plot(history.history['acc'])
+plt.plot(history.history['val_acc'])
+plt.title('model accuracy')
+plt.ylabel('accuracy')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
+plt.show()
+# summarize history for loss
 plt.plot(history.history['loss'])
-plt.title('Model')
-plt.ylabel('Result')
-plt.xlabel('Epochs')
-plt.legend(['Accuracy', 'Loss'], loc='upper right')
+plt.plot(history.history['val_loss'])
+plt.title('model loss')
+plt.ylabel('loss')
+plt.xlabel('epoch')
+plt.legend(['train', 'test'], loc='upper left')
 plt.show()
