@@ -76,7 +76,7 @@ model.compile(optimizer=tf.train.AdamOptimizer(),
               metrics=['accuracy'])
 
 # Train the Model
-history = model.fit(train_images, train_labels, epochs=300)
+history = model.fit(train_images, train_labels, epochs=30)
 
 # Print the Summary
 model.summary()
